@@ -1,4 +1,4 @@
-FPGA-Based Camera Capture and Real-Time Display System with Image Processing
+#FPGA-Based Camera Capture and Real-Time Display System with Image Processing
 
 ECE 385 Final Project Spring 2025 by Guy Robbins and Rohan Shah
 
