@@ -1,4 +1,4 @@
-#FPGA-Based Camera Capture and Real-Time Display System with Image Processing
+# FPGA-Based Camera Capture and Real-Time Display System with Image Processing
 
 ECE 385 Final Project Spring 2025 by Guy Robbins and Rohan Shah
 
@@ -7,6 +7,9 @@ This project interfaces an OV7670 camera with the AMD Urbana Board's Spartan 7 F
 The project was built from scratch and required about 30 hours of debugging and hardware-software integration. Major technical challenges included implementing a reliable I2C interface, correctly configuring the OV7670, and resolving a persistent screen flickering issue due to mismatched camera (30 Hz) and display (60 Hz) frame rates. Referencing the OV7670 datasheet and amsacks github constantly was critical in picking up on simple issues with the camera configuration. Despite the complexity, the final result was a smooth live display with working image filters. 
 
 Important Resources: 
+
 https://github.com/amsacks/OV7670-camera
+
 https://web.mit.edu/6.111/www/f2016/tools/OV7670_2006.pdf
+
 https://www.ti.com/lit/an/sbaa565/sbaa565.pdf?ts=1750564770484
