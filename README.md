@@ -4,7 +4,7 @@ This project interfaces an Arduino OV7670 camera with the AMD Urbana Board’s S
 
 ## Overview
 
-The system captures QVGA-resolution (320×240) video using a custom I2C driver to configure the camera and stores pixel data in dual-port BRAM. A pixel capture module synchronizes with the camera’s pixel clock and VSYNC/HSYNC signals, decodes RGB444 data, and writes it into memory. Video is then read back, processed with optional image effects, and displayed via HDMI using an IP-based VGA-to-HDMI converter.
+The system captures QVGA-resolution (320×240) video using a custom I2C driver to configure the camera by writing to its internal registers and stores pixel data in dual-port BRAM. A pixel capture module synchronizes with the camera’s pixel clock and VSYNC/HSYNC signals, decodes RGB444 data, and writes it into memory. Video is then read back, processed with optional image effects, and displayed via HDMI using an IP-based VGA-to-HDMI converter.
 
 Image processing filters include:
 - Grayscale
