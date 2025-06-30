@@ -38,7 +38,6 @@ Testbenches and waveform configuration files are provided for:
 
 ## Additional Resources
 
-- [Final Report (PDF)](Final_Report.pdf)
-- [OV7670 Camera Datasheet](https://cdn.sparkfun.com/datasheets/Dev/CMOS/OV7670.pdf)
-- [Xilinx HDMI TX IP Documentation](https://docs.xilinx.com/r/en-US/pg021-dvi)
-- [Spartan-7 FPGA Overview](https://www.xilinx.com/products/silicon-devices/fpga/spartan-7.html)
+- [OV7670 Camera Datasheet](https://web.mit.edu/6.111/www/f2016/tools/OV7670_2006.pdf)
+- [amsacks GitHub](https://github.com/amsacks/OV7670-camera)
+- [Spartan-7 FPGA Overview]([https://www.xilinx.com/products/silicon-devices/fpga/spartan-7.html](https://www.amd.com/en/products/adaptive-socs-and-fpgas/fpga/spartan-7.html))
