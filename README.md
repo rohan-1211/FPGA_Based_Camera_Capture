@@ -22,14 +22,6 @@ These filters are applied in real time and selected through FPGA button inputs.
 - Modular RTL design written in SystemVerilog
 - User-controlled filter selection via hardware buttons
 
-## Project Structure
-
-- `Camera_Final_Project.xpr` – Vivado project file  
-- `*.v`, `*.sv` – Verilog and SystemVerilog source modules  
-- `*_tb.v` – Testbenches for simulation  
-- `*.wcfg` – Waveform configuration files for simulation  
-- `cache/ip/` – Generated Vivado IP cores (HDMI TX, BRAM, Clock Wizard, etc.)
-
 ## Testing and Simulation
 
 Testbenches and waveform configuration files are provided for:
@@ -43,3 +35,10 @@ Testbenches and waveform configuration files are provided for:
 - OV7670 Camera Module  
 - Spartan-7 FPGA (AMD Urbana Board)  
 - HDMI TX, Clock Wizard, and BRAM IP Cores  
+
+## Additional Resources
+
+- [Final Report (PDF)](Final_Report.pdf)
+- [OV7670 Camera Datasheet](https://cdn.sparkfun.com/datasheets/Dev/CMOS/OV7670.pdf)
+- [Xilinx HDMI TX IP Documentation](https://docs.xilinx.com/r/en-US/pg021-dvi)
+- [Spartan-7 FPGA Overview](https://www.xilinx.com/products/silicon-devices/fpga/spartan-7.html)
