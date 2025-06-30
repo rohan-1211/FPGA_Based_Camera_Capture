@@ -1,15 +1,45 @@
-# FPGA-Based Camera Capture and Real-Time Display System with Image Processing
+# FPGA-Based Camera Capture System
 
-ECE 385 Final Project Spring 2025 by Guy Robbins and Rohan Shah
+This project interfaces an Arduino OV7670 camera with the AMD Urbana Board’s Spartan-7 FPGA to create a real-time video pipeline capable of live display and simple image processing using SystemVerilog.
 
-This project interfaces an Arduino OV7670 camera with the AMD Urbana Board's Spartan 7 FPGA to create a real-time video pipeline capable of live display and simple image processing effects through SystemVerilog. The system captures QVGA-resolution (320×240) video using a custom I2C driver to configure the camera and stores pixel data in dual-port BRAM. A custom pixel capture module synchronizes with the camera's output, decodes RGB444 data, and writes it into memory for display. The video output is upscaled and converted from VGA to HDMI using an IP core. Image processing filters included grayscale, color inversion, and a “light tunnel” effect, that were applied live during the readback stage, with user input to select each filter through the FPGA buttons.
+## Overview
 
-The project was built from scratch and required about 30 hours of debugging and hardware-software integration. Major technical challenges included implementing a reliable I2C interface, correctly configuring the OV7670, and resolving a persistent screen flickering issue due to mismatched camera (30 Hz) and display (60 Hz) frame rates. Referencing the OV7670 datasheet and amsacks github constantly was critical in picking up on simple issues with the camera configuration. Despite the complexity, the final result was a smooth live display with working image filters. 
+The system captures QVGA-resolution (320×240) video using a custom I2C driver to configure the camera and stores pixel data in dual-port BRAM. A pixel capture module synchronizes with the camera’s pixel clock and VSYNC/HSYNC signals, decodes RGB444 data, and writes it into memory. Video is then read back, processed with optional image effects, and displayed via HDMI using an IP-based VGA-to-HDMI converter.
 
-Important Resources: 
+Image processing filters include:
+- Grayscale
+- Color inversion
+- Light tunnel effect
 
-https://github.com/amsacks/OV7670-camera
+These filters are applied in real time and selected through FPGA button inputs.
 
-https://web.mit.edu/6.111/www/f2016/tools/OV7670_2006.pdf
+## Features
 
-https://www.ti.com/lit/an/sbaa565/sbaa565.pdf?ts=1750564770484
+- OV7670 camera interface via custom I2C controller
+- QVGA frame capture using dual-port BRAM
+- Real-time image filters applied during memory readback
+- HDMI video output using IP cores
+- Modular RTL design written in SystemVerilog
+- User-controlled filter selection via hardware buttons
+
+## Project Structure
+
+- `Camera_Final_Project.xpr` – Vivado project file  
+- `*.v`, `*.sv` – Verilog and SystemVerilog source modules  
+- `*_tb.v` – Testbenches for simulation  
+- `*.wcfg` – Waveform configuration files for simulation  
+- `cache/ip/` – Generated Vivado IP cores (HDMI TX, BRAM, Clock Wizard, etc.)
+
+## Testing and Simulation
+
+Testbenches and waveform configuration files are provided for:
+- I2C controller verification (register write sequence)
+- Pixel capture timing and synchronization
+
+## Tools and Technologies
+
+- Vivado 2023.1  
+- SystemVerilog / Verilog  
+- OV7670 Camera Module  
+- Spartan-7 FPGA (AMD Urbana Board)  
+- HDMI TX, Clock Wizard, and BRAM IP Cores  
